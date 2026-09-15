@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using debooth.Data;
 using debooth.Models;
 
 [Route("api/Controllers")]
@@ -24,6 +25,6 @@ public class PostsController : ControllerBase
 	{
 		_context.Posts.Add(Post);
 		await _context.SaveChangesAsync();
-		retur CretedAtAction(nameof(GetPosts), new { id = user.Id }, user);
+		return CretedAtAction(nameof(GetPosts), new { id = user.Id }, user);
 	}
 }

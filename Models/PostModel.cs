@@ -1,6 +1,8 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace debooth.Models;
 
-public class PostModel
+public class Post
 {
 	public int Id { get; set; }
 	[Required]
