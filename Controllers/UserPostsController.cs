@@ -7,7 +7,7 @@ using debooth.Models;
 [ApiController]
 public class UserPostsController : ControllerBase
 {
-	private AppDbContext _context;
+	private readonly AppDbContext _context;
 
 	public UserPostsController(AppDbContext context)
 	{
