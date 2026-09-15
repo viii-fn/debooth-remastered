@@ -15,16 +15,16 @@ public class UserPostsController : ControllerBase
 	}
 
 	[HttpGet]
-	public async UserPost<ActionResult<IEnumerable<UserPost>>> GetPosts()
+	public async Task<ActionResult<IEnumerable<UserPost>>> GetPosts()
 	{
 		return await _context.Posts.ToListAsync();
 	}
 
 	[HttpPost]
-	public async UserPost<ActionResult<UserPost>> PostPost(UserPost post)
+	public async Task<ActionResult<UserPost>> UserPostsPost(UserPost post)
 	{
 		_context.UserPosts.Add(post);
 		await _context.SaveChangesAsync();
-		return CretedAtAction(nameof(GetPosts), new { id = post.Id }, post);
+		return CreatedAtAction(nameof(GetPosts), new { id = post.Id }, post);
 	}
 }
