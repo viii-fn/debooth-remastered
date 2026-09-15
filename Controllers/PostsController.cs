@@ -18,4 +18,12 @@ public class PostsController : ControllerBase
 	{
 		return await _context.Posts.ToListAsync();
 	}
+
+	[HttpPost]
+	public async Post<ActionResult<Post>> PostPost(Post post)
+	{
+		_context.Posts.Add(Post);
+		await _context.SaveChangesAsync();
+		retur CretedAtAction(nameof(GetPosts), new { id = user.Id }, user);
+	}
 }
