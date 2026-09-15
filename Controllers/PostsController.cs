@@ -25,6 +25,6 @@ public class UserPostsController : ControllerBase
 	{
 		_context.UserPosts.Add(post);
 		await _context.SaveChangesAsync();
-		return CreatedAtAction(nameof(GetPosts), new { id = post.Id }, post);
+		return CreatedAtAction(nameof(GetUserPosts), new { id = post.Id }, post);
 	}
 }
