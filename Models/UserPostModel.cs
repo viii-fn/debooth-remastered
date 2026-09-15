@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace debooth.Models;
 
-public class Post
+public class UserPost
 {
 	public int Id { get; set; }
 	[Required]

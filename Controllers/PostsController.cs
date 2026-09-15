@@ -5,26 +5,26 @@ using debooth.Models;
 
 [Route("api/Controllers")]
 [ApiController]
-public class PostsController : ControllerBase
+public class UserPostsController : ControllerBase
 {
 	private readonly AppDbContext _context;
 
-	public PostsController(AppDbContext context)
+	public UserPostsController(AppDbContext context)
 	{
 		_context = context;
 	}
 
 	[HttpGet]
-	public async Post<ActionResult<IEnumerable<Post>>> GetPosts()
+	public async UserPost<ActionResult<IEnumerable<UserPost>>> GetPosts()
 	{
 		return await _context.Posts.ToListAsync();
 	}
 
 	[HttpPost]
-	public async Post<ActionResult<Post>> PostPost(Post post)
+	public async UserPost<ActionResult<UserPost>> PostPost(UserPost post)
 	{
-		_context.Posts.Add(Post);
+		_context.UserPosts.Add(post);
 		await _context.SaveChangesAsync();
-		return CretedAtAction(nameof(GetPosts), new { id = user.Id }, user);
+		return CretedAtAction(nameof(GetPosts), new { id = post.Id }, post);
 	}
 }
