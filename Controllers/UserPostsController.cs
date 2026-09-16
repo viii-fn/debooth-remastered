@@ -15,13 +15,6 @@ public class UserPostsController : ControllerBase
 		_context = context;
 	}
 
-	[HttpGet("faah")]
-	public IActionResult Test()
-	{
-		return Ok("Your Sqlite is broken dawg");
-	}
-
-
 	[HttpGet]
 	public async Task<ActionResult<IEnumerable<UserPost>>> GetAll()
 	{
