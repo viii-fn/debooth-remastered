@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using debooth.Data;
 using debooth.Models;
 
-[Route("api/Controllers")]
+[Route("api/[controller]")]
 [ApiController]
 public class UserPostsController : ControllerBase
 {
@@ -13,6 +14,13 @@ public class UserPostsController : ControllerBase
 	{
 		_context = context;
 	}
+
+	[HttpGet("faah")]
+	public IActionResult Test()
+	{
+		return Ok("Your Sqlite is broken dawg");
+	}
+
 
 	[HttpGet]
 	public async Task<ActionResult<IEnumerable<UserPost>>> GetAll()
